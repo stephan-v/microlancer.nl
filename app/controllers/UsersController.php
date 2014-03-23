@@ -42,7 +42,19 @@ class UsersController extends \BaseController {
 
 		$this->user->create($input);
 
-		return Redirect::route('users.index');
+		$user = ['email' => $input['email']];
+
+		$data = ['username' => $input['email']];
+
+		// Queue zorgt ervoor dat de email wordt verzonden op de achtergrond en de gebruiker niet hoeft te wachten op het verzenden van
+		// de email maar meteen wordt doorgezonden.
+		Mail::queue('emails.welcome', $data, function($message) use ($user)
+		{
+			$message->to($user['email'])
+					->subject('Welkom bij microlancer.nl!');
+		});
+
+		return Redirect::route('users.show', $input['email']);
 	}
 
 	/**
