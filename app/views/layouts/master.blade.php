@@ -8,6 +8,9 @@
 <body>
 	<nav class="navbar navbar-default">
 		<div class="container">
+			<ul class="nav navbar-nav navbar-left">
+				<li>{{ link_to('/', 'home') }}</li>
+			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li>{{ link_to_route('users.index', 'Alle gebruikers') }}</li>
 				<li>{{ link_to_route('users.create', 'Registreer')}}</li>

@@ -15,9 +15,7 @@
 	</ul>
 
 	<div class="btn-group">
-		{{ Form::open(['route' => ['users.edit', $user->email]]) }}
-			{{ Form::submit('Edit account', ['class' => 'btn btn-primary']) }}
-		{{ Form::close() }}
+		{{ link_to_route('users.edit', 'Edit account', $user->email, ['class' => 'btn btn-primary']) }}
 	</div>
 
 	<div class="btn-group">

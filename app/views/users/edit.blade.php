@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-	<h1>Maak een account aan</h1>
-	<p>Maak hier een account aan.</p>
+	<h1>Edit je account</h1>
+	<p>Wijzig de gegevens van je account.</p>
 
-	{{ Form::open(['route' => 'users.store']) }}
+	{{ Form::open(['route' => ['users.update', $email], 'method' => 'PUT']) }}
 		<div class="form-group">
 			{{ Form::label('email', 'Email:')}}
 			{{ Form::text('email', null, ['class' => 'form-control']) }}
@@ -15,7 +15,7 @@
 			{{ Form::password('password', ['class' => 'form-control']) }}
 		</div>
 	
-		{{ Form::submit('Maak mijn account aan!', ['class' => 'btn btn-primary']) }}
+		{{ Form::submit('Update mijn account!', ['class' => 'btn btn-primary']) }}
 
 	{{ Form::close() }}
 @stop

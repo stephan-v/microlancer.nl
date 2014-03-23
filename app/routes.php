@@ -17,3 +17,16 @@ Route::get('/', function()
 });
 
 Route::resource('users', 'UsersController');
+
+Route::get('/mailer', function() 
+{
+	$data = [];
+
+	// Queue zorgt ervoor dat de email wordt verzonden op de achtergrond en de gebruiker niet hoeft te wachten op het verzenden van
+	// de email maar meteen wordt doorgezonden.
+	Mail::queue('emails.welcome', $data, function($message) 
+	{
+		$message->to('stephan-v@hotmail.com')
+				->subject('Welcome!');
+	});
+});

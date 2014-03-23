@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'laravel',
+			'database'  => 'ontwerpwedstrijden',
 			'username'  => 'root',
 			'password'  => 'carrot123',
 			'charset'   => 'utf8',

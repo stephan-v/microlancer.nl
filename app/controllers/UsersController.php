@@ -2,6 +2,13 @@
 
 class UsersController extends \BaseController {
 
+	protected $user;
+
+	public function __construct(User $user)
+	{
+		$this->user = $user;
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,7 +16,7 @@ class UsersController extends \BaseController {
 	 */
 	public function index()
 	{
-		$users = User::all();
+		$users = $this->user->all();
 
 		return View::make('users.index')->with('users', $users);
 	}
@@ -31,9 +38,9 @@ class UsersController extends \BaseController {
 	 */
 	public function store()
 	{
-		$data = Input::all();
+		$input = Input::all();
 
-		User::create($data);
+		$this->user->create($input);
 
 		return Redirect::route('users.index');
 	}
@@ -47,7 +54,7 @@ class UsersController extends \BaseController {
 	public function show($email)
 	{
 		//Get the email instead of the id
-		$user = User::where('email', '=', $email)->first();
+		$user = $this->user->where('email', '=', $email)->first();
 
 		return View::make('users.show')->with('user', $user);
 	}
@@ -58,9 +65,9 @@ class UsersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($email)
 	{
-		return View::make('users.update');
+		return View::make('users.edit')->with('email', $email);
 	}
 
 	/**
@@ -69,11 +76,13 @@ class UsersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($email)
 	{
-		$data = Input::all();
+		$input = Input::all();
 
-		User::create($data);
+		$user = $this->user->where('email', '=', $email)->first();
+
+		$user->update($input);
 
 		return Redirect::route('users.index');
 	}
@@ -86,9 +95,7 @@ class UsersController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$user = User::find($id);
-
-		$user->delete();
+		$this->user->find($id)->delete();
 
 		return Redirect::route('users.index');
 	}
