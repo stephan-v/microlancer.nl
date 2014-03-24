@@ -40,11 +40,16 @@ class UsersController extends \BaseController {
 	{
 		$input = Input::all();
 
+		$input['confirmation'] = str_random();
+
 		$this->user->create($input);
 
 		$user = ['email' => $input['email']];
 
-		$data = ['username' => $input['email']];
+		$data = [
+			'username' => $input['email'],
+			'confirmation' => $input['confirmation']
+		];
 
 		// Queue zorgt ervoor dat de email wordt verzonden op de achtergrond en de gebruiker niet hoeft te wachten op het verzenden van
 		// de email maar meteen wordt doorgezonden.

@@ -9,7 +9,7 @@
 	<nav class="navbar navbar-default">
 		<div class="container">
 			<ul class="nav navbar-nav navbar-left">
-				<li>{{ link_to('/', 'home') }}</li>
+				<li>{{ link_to_route('home', 'home') }}</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li>{{ link_to_route('users.index', 'Alle gebruikers') }}</li>

@@ -5,7 +5,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
-	protected $fillable = ['email', 'password'];
+	protected $fillable = ['email', 'password', 'confirmation', 'confirmed'];
 
 	// Set password mutator
 

@@ -17,6 +17,8 @@ class CreateUsersTable extends Migration {
 			$table->increments('id');
 			$table->string('email');
 			$table->string('password');
+			$table->string('confirmation');
+			$table->boolean('confirmed')->default(0);
 			$table->timestamps();
 		});
 	}
