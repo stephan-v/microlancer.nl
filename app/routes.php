@@ -34,3 +34,5 @@ Route::get('/registration/verify/{confirmation}', ['as' => 'users.activate', fun
 	return Redirect::route('home');
 
 }]);
+
+Route::resource('contests', 'ContestsController');
