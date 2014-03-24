@@ -12,6 +12,7 @@
 				<li>{{ link_to_route('home', 'home') }}</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+				<li>{{ link_to_route('contests.index', 'Wedstrijden') }}</li>
 				<li>{{ link_to_route('users.index', 'Alle gebruikers') }}</li>
 				<li>{{ link_to_route('users.create', 'Registreer')}}</li>
 			</ul>

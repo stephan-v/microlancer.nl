@@ -2,6 +2,13 @@
 
 class ContestsController extends BaseController {
 
+	protected $contest;
+
+	public function __construct(Contest $contest)
+	{
+		$this->contest = $contest;
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,7 +16,8 @@ class ContestsController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('contests.index');
+		$contests = $this->contest->all();
+        return View::make('contests.index')->with('contests', $contests);
 	}
 
 	/**
@@ -29,7 +37,11 @@ class ContestsController extends BaseController {
 	 */
 	public function store()
 	{
-		//
+		$input = Input::all();
+
+		$contest = $this->contest->create($input);
+
+		echo $contest->id;
 	}
 
 	/**
@@ -40,7 +52,8 @@ class ContestsController extends BaseController {
 	 */
 	public function show($id)
 	{
-        return View::make('contests.show');
+		$contest = $this->contest->find($id);
+        return View::make('contests.show')->with('contest', $contest);
 	}
 
 	/**
