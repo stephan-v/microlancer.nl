@@ -40,6 +40,13 @@ class UsersController extends \BaseController {
 	{
 		$input = Input::all();
 
+		$validation = Validator::make($input, User::$rules);
+
+		if ($validation->fails()) 
+		{
+			return Redirect::back()->withInput()->withErrors($validation->messages());
+		}
+
 		$input['confirmation'] = str_random();
 
 		$this->user->create($input);
@@ -98,7 +105,7 @@ class UsersController extends \BaseController {
 		$input = Input::all();
 
 		$user = $this->user->where('email', '=', $email)->first();
-
+		
 		$user->update($input);
 
 		return Redirect::route('users.index');
