@@ -14,7 +14,16 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li>{{ link_to_route('contests.index', 'Wedstrijden') }}</li>
 				<li>{{ link_to_route('users.index', 'Alle gebruikers') }}</li>
-				<li>{{ link_to_route('users.create', 'Registreer')}}</li>
+				
+				@if( Auth::check() )
+					<li>{{ link_to_route('users.logout', Auth::user()->email) }}</li>
+				@else
+					<li>{{ link_to_route('users.login', 'Log in') }}</li>
+				@endif
+				
+				@if( !Auth::check() )
+					<li>{{ link_to_route('users.create', 'Registreer') }}</li>
+				@endif
 			</ul>
 		</div>
 	</nav>

@@ -14,13 +14,18 @@
 		</li>
 	</ul>
 
-	<div class="btn-group">
-		{{ link_to_route('users.edit', 'Edit account', $user->email, ['class' => 'btn btn-primary']) }}
-	</div>
+	<!-- Check if user is logged in AND has the same id as the userprofile -->
+	@if(Auth::check() and Auth::user()->id == $user->id )
+		<p>You have the same id, therefore you have access.</p>	
 
-	<div class="btn-group">
-		{{ Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) }}
-			{{ Form::submit('Delete account', ['class' => 'btn btn-danger']) }}
-		{{ Form::close() }}
-	</div>
+		<div class="btn-group">
+			{{ link_to_route('users.edit', 'Edit account', $user->email, ['class' => 'btn btn-primary']) }}
+		</div>
+
+		<div class="btn-group">
+			{{ Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) }}
+				{{ Form::submit('Delete account', ['class' => 'btn btn-danger']) }}
+			{{ Form::close() }}
+		</div>
+	@endif
 @stop

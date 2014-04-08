@@ -36,3 +36,10 @@ Route::get('/registration/verify/{confirmation}', ['as' => 'users.activate', fun
 }]);
 
 Route::resource('contests', 'ContestsController');
+
+// User authentication - Login
+Route::get('login', ['as' => 'users.login', 'uses' => 'UsersController@login']);
+
+Route::post('login', 'UsersController@logincheck');
+
+Route::get('logout', ['as' => 'users.logout', 'uses' => 'UsersController@logout']);

@@ -41,7 +41,7 @@ class ContestsController extends BaseController {
 
 		$contest = $this->contest->create($input);
 
-		echo $contest->id;
+		return Redirect::route('contests.show', $contest->id);
 	}
 
 	/**

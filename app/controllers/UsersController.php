@@ -124,4 +124,25 @@ class UsersController extends \BaseController {
 		return Redirect::route('users.index');
 	}
 
+	public function login() {
+		return View::make('users.login');
+	}
+
+	public function logincheck() {
+		$email = Input::get('email');
+		$password = Input::get('password');
+
+		if (Auth::attempt(['email' => $email, 'password' => $password]))
+		{
+		    return Redirect::to('/');
+		} else {
+			return Redirect::back()->withInput()->withErrors('failed to login');
+		}
+	}
+
+	public function logout() {
+		Auth::logout();
+		return Redirect::back();
+	}
+
 }

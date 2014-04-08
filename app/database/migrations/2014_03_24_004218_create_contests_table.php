@@ -12,13 +12,14 @@ class CreateContestsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('contests', function(Blueprint $table) {
+		Schema::create('contests', function(Blueprint $table) 
+		{
 			$table->increments('id');
 			$table->string('title');
 			$table->string('category');
 			$table->text('description');
 			$table->integer('budget');
-			$table->string('owner');
+			$table->string('user_id');
 			$table->timestamps();
 		});
 	}
