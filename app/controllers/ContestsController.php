@@ -39,6 +39,9 @@ class ContestsController extends BaseController {
 	{
 		$input = Input::all();
 
+		// Assign the contest to the currently logged in user
+		$input['user_id'] = Auth::user()->id;
+
 		$contest = $this->contest->create($input);
 
 		return Redirect::route('contests.show', $contest->id);
@@ -64,7 +67,8 @@ class ContestsController extends BaseController {
 	 */
 	public function edit($id)
 	{
-        return View::make('contests.edit');
+		$contest = $this->contest->find($id);
+        return View::make('contests.edit')->with('contest', $contest);
 	}
 
 	/**
@@ -86,7 +90,9 @@ class ContestsController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$this->contest->find($id)->delete();
+
+		return Redirect::route('contests.index');
 	}
 
 }

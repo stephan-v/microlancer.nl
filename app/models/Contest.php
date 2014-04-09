@@ -2,7 +2,7 @@
 
 class Contest extends Eloquent {
 
-	protected $fillable = ['title', 'category', 'description', 'budget'];
+	protected $fillable = ['title', 'category', 'description', 'budget', 'user_id'];
 
 	public function user()
 	{

@@ -7,7 +7,7 @@
 	{{ Form::open(['route' => ['users.update', $email], 'method' => 'PUT']) }}
 		<div class="form-group">
 			{{ Form::label('email', 'Email:')}}
-			{{ Form::text('email', null, ['class' => 'form-control']) }}
+			{{ Form::text('email', $email, ['class' => 'form-control']) }}
 		</div>
 
 		<div class="form-group">

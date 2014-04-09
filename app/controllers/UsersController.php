@@ -47,6 +47,7 @@ class UsersController extends \BaseController {
 			return Redirect::back()->withInput()->withErrors($validation->messages());
 		}
 
+		// Assign the confirmation to a random generate hashstring and assign owner to logged in user
 		$input['confirmation'] = str_random();
 
 		$this->user->create($input);

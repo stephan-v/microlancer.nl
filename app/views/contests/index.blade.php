@@ -19,7 +19,7 @@
 					<td>{{ link_to_route('contests.show', $contest->title, $contest->id) }}</td>
 					<td>{{ $contest->category }}</td>
 					<td>{{ $contest->budget }}</td>
-					<td>{{ $contest->owner }}</td>
+					<td>{{ $contest->user['email'] }}</td>
 				</tr>
 			@endforeach
 		</tbody>
