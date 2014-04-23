@@ -1,10 +1,15 @@
 @extends('layouts.master')
 
 @section('content')
-	<h1>Main index</h1>
-	<div class="jumbotron">
-		<h1>Welkom op de indexpagina</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, culpa, magni dolorem magnam est ipsum soluta nisi eos. Voluptates mollitia obcaecati minima est itaque in magnam eum? Quia, maiores, accusamus.</p>
+	<div class="row full-width-image">
+
 	</div>
-	{{ link_to_route('users.index', 'Bekijk alle gebruikers') }}
+	<div class="container">
+		<div class="row">
+			<div class="column-12">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, quis quos culpa similique facere blanditiis mollitia voluptatum tempore ipsa saepe maxime illo labore. Rerum officiis amet non odio et hic?</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, adipisci, atque, perferendis reprehenderit illum minus recusandae est tempora odio quod distinctio laudantium ex delectus quas libero veritatis nisi ipsam culpa.</p>
+			</div>
+		</div>
+	</div>
 @stop

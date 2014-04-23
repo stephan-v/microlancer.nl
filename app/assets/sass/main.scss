@@ -1,1 +1,43 @@
-@import "partials/grid.scss";
+// Modules and Variables
+@import "partials/base";
+
+// Partials
+@import "partials/grids";
+@import "partials/typography";
+
+.container {
+	margin: 0 auto;
+}
+
+header {
+	border-bottom: 1px solid lightgrey;
+	@include pie-clearfix;
+}
+
+.navbar ul {
+	float: right;
+	list-style-type: none;
+	.active {
+		background: tomato;
+		color: #fff;
+	}
+	li {
+		float: left;
+		a {
+			display: block;
+			padding: 25px;
+			color: black;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+				color: tomato;
+			}
+		}
+	}
+}
+
+.full-width-image {
+	height: 600px;
+	background: url('../img/laptop1.jpg') 50% 45%;
+	@include background-size(cover);
+}
