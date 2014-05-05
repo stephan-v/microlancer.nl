@@ -1,0 +1,25 @@
+.form-container {
+	@include border-radius(4px);
+	width: 600px;
+	margin: 0 auto;
+	background: rgba(0,0,0,0.25);
+	padding: 30px 75px;
+	margin-top: 220px;
+	h1 {
+		color: #FFF;
+		margin-bottom: 1em;
+	}
+	p {
+		color: #FFF;
+		margin-top: 0;
+	}
+}
+input {
+	border: none;
+	width: 100%;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+input[type="submit"] {
+	padding: 20px 0;
+}

@@ -1,0 +1,45 @@
+// Percentage a button should darken when a user hovers over it
+$darken-percentage: 5%;
+
+.btn {
+	background: white;
+	outline: none;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	padding: 10px;
+}
+.btn-primary {
+	background: #A1E12F;
+	color: #FFF;
+	border-color: #87AA7E;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	&:hover {
+		background: darken(#A1E12F, $darken-percentage);
+	}
+}
+.btn-succes {
+	background: #A1E12F;
+	color: #FFF;
+	border-color: #87AA7E;
+	text-transform: uppercase;
+	font-weight: bold;
+	&:hover {
+		background: darken(#A1E12F, $darken-percentage);
+	}
+}
+
+// Alerts
+
+.alert {
+	@include border-radius(4px);
+	border: 1px solid transparent;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.alert-danger {
+	background-color: #f2dede;
+	border-color: #ebccd1;
+	color: #a94442;
+}

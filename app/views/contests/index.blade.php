@@ -1,32 +1,37 @@
 @extends('layouts.master')
 
 @section('content')
-	<h1>Contests index</h1>
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>#</th>
-				<th>Titel</th>
-				<th>Categorie</th>
-				<th>Budget</th>
-				<th>Eigenaar</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach($contests as $contest)
-				<tr>
-					<td>{{ $contest->id }}</td>
-					<td>{{ link_to_route('contests.show', $contest->title, $contest->id) }}</td>
-					<td>{{ $contest->category }}</td>
-					<td>{{ $contest->budget }}</td>
-					<td>{{ $contest->user['email'] }}</td>
-				</tr>
-			@endforeach
-		</tbody>
-	</table>
+	<div class="container">
+		<div class="row">
+			<div class="column-12">
 
-	<div class="btn-group">
-		{{ link_to_route('contests.create', 'Maak een wedstrijd aan!', null, ['class' => 'btn btn-primary']) }}
-	</div>
+				<h1>Ontwerpwedstrijden</h1>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>Titel &#x25BC;</th>
+							<th class="center">Categorie &#x25BC;</th>
+							<th class="center">Budget &#x25BC;</th>
+							<th class="center">Eigenaar &#x25BC;</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach($contests as $contest)
+							<tr>
+								<td>{{ link_to_route('contests.show', $contest->title, $contest->id) }}</td>
+								<td class="center">{{ $contest->category }}</td>
+								<td class="center">&#8364; {{ $contest->budget }}</td>
+								<td class="center">{{ $contest->user['email'] }}</td>
+							</tr>
+						@endforeach
+					</tbody>
+				</table>
 
+				<div class="btn-group">
+					{{ link_to_route('contests.create', 'Maak een wedstrijd aan!', null, ['class' => 'btn btn-primary']) }}
+				</div>
+
+			</div><!-- end .column-12 -->
+		</div><!-- end .row -->
+	</div><!-- end .container -->
 @stop

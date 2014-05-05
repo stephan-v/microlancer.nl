@@ -4,40 +4,114 @@
 // Partials
 @import "partials/grids";
 @import "partials/typography";
+@import "partials/tables";
+@import "partials/forms";
+@import "partials/lists";
+@import "partials/buttons";
 
+// General Styles
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+*:focus {
+    outline: 0;
+}
+body {
+	background: #F0F0F0;
+	color: #454545;
+}
 .container {
 	margin: 0 auto;
 }
+a {
+	color: #19aacf;
+	&:hover {
+		@include transition(400ms);
+	}
+}
+
+// Header Styles
 
 header {
+	width: 100%;
+	background: white;
 	border-bottom: 1px solid lightgrey;
 	@include pie-clearfix;
 }
-
 .navbar ul {
 	float: right;
 	list-style-type: none;
-	.active {
-		background: tomato;
-		color: #fff;
-	}
 	li {
 		float: left;
 		a {
 			display: block;
 			padding: 25px;
-			color: black;
+			color: darkgrey;
 			text-decoration: none;
 			&:hover {
-				text-decoration: underline;
-				color: tomato;
+				color: #000;
 			}
 		}
 	}
 }
 
+// Hero Styles
+
 .full-width-image {
 	height: 600px;
-	background: url('../img/laptop1.jpg') 50% 45%;
+	background: url('../img/laptop4.jpg') 50% 50%;
+	@include background-size(cover);
+}
+.intro {
+	padding-top: 220px;
+	text-align: center;
+}
+.tagline {
+	@include adjust-font-size-to(46px);
+	line-height: 1em;
+	font-weight: bold;
+}
+
+// Contest Single Page
+
+.container-main {
+	padding-top: 50px;
+}
+
+.contest-header {
+	border-bottom: 1px solid #dae3e3;
+	margin-bottom: 30px;
+	text-align: center;
+	h2 {
+		top: 30px;
+		display: inline-block;
+		position: relative;
+		background: #F0F0F0;
+		padding: 0 15px;
+	}
+}
+.contest-details {
+	padding: 25px;
+	background: white;
+	border: solid 1px #e2e2e2;
+	@include box-shadow(0 0 3px rgba(0,0,0,0.05));
+	margin-bottom: 20px;
+}
+.contest-briefing {
+	@extend .contest-details;
+}
+
+
+// Full Screen Backgrounds
+.login-bg {
+	background: url("../img/imac.jpg") fixed center center;
+	@include background-size(cover);
+}
+.register-bg {
+	background: url("../img/keyboard.jpg") fixed center center;
 	@include background-size(cover);
 }

@@ -1,23 +1,25 @@
 @extends('layouts.master')
 
+<!-- This dictates the background class for the body, to regulate per page patterns or images -->
+@section('background', 'register-bg')
+
 @section('content')
-	<h1>Maak een account aan</h1>
-	<p>Maak hier een account aan.</p>
 
-	{{ Form::open(['route' => 'users.store']) }}
-		<div class="form-group">
-			{{ Form::label('email', 'Email:')}}
-			{{ Form::text('email', null, ['class' => 'form-control']) }}
-			{{ $errors->first('email', "<div class='alert alert-danger'>:message</div>") }}
-		</div>
+	<div class="container">
+		<div class="form-container">
+			<h1 class="center">Maak een account aan</h1>
 
-		<div class="form-group">
-			{{ Form::label('password', 'Password:')}}
-			{{ Form::password('password', ['class' => 'form-control']) }}
-			{{ $errors->first('password', "<div class='alert alert-danger'>:message</div>") }}
-		</div>
-	
-		{{ Form::submit('Maak mijn account aan!', ['class' => 'btn btn-primary']) }}
+			{{ Form::open(['route' => 'users.store']) }}
+				{{ Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) }}
+				{{ $errors->first('email', "<div class='alert alert-danger'>:message</div>") }}
 
-	{{ Form::close() }}
+				{{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Wachtwoord']) }}
+				{{ $errors->first('password', "<div class='alert alert-danger'>:message</div>") }}
+			
+				{{ Form::submit('Registreer', ['class' => 'btn btn-succes']) }}
+
+			{{ Form::close() }}
+		</div><!-- end .form-container -->
+	</div><!-- end .container -->
+
 @stop

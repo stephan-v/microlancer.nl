@@ -1,0 +1,36 @@
+// Set base font
+$base-font-size: 13px;
+
+// Set base height
+$base-line-height: 24px;
+
+// Include mixin
+@include establish-baseline;
+
+body {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+h1 {
+	@include adjust-font-size-to(22px);
+}
+h2 {
+	@include adjust-font-size-to(18px);
+	margin-bottom: 20px;
+}
+h3 {
+	@include adjust-font-size-to(18px);
+}
+p {
+	margin: 1em 0;
+	color: #777;
+}
+.center {
+	text-align: center;
+}
+.left {
+	text-align: left;
+}
+.right {
+	text-align: right;
+}

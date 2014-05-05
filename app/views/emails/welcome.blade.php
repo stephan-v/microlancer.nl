@@ -5,7 +5,7 @@
 	<title>Welkom</title>
 </head>
 <body>
-	<h1>Welkom bij ontwerpwedstrijden!</h1>
+	<h1>Welkom bij microlancer.</h1>
 	<p>Bedankt voor het aanmelden op de website.</p>
 	<p>Gebruikersnaam: {{ $username }}</p>
 
