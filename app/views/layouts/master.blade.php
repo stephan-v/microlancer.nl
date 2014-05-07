@@ -18,7 +18,8 @@
 							<li>{{ link_to_route('users.index', 'Alle gebruikers') }}</li>
 							
 							@if( Auth::check() )
-								<li>{{ link_to_route('users.logout', Auth::user()->email) }}</li>
+								<li>{{ link_to_route('users.show', Auth::user()->email, Auth::user()->email) }}</li>
+								<li>{{ link_to_route('users.logout', 'Log out') }}</li>
 							@else
 								<li>{{ link_to_route('users.login', 'Log in') }}</li>
 							@endif

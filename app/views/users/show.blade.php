@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="column-12">
-				<h1>Single Index View</h1>
+				<h1>User Profile</h1>
 				<ul class="list-group">
 					<li class="list-group-item">
 						ID: {{ $user->id }}

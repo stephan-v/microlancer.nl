@@ -23,3 +23,12 @@ input {
 input[type="submit"] {
 	padding: 20px 0;
 }
+textarea, select {
+	width: 100%;
+	padding: 20px;
+}
+select {
+	padding: 20px;
+	margin-bottom: 10px;
+	background: #FFF;
+}

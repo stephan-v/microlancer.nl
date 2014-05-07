@@ -17,6 +17,8 @@ Route::get('/', ['as' => 'home', function()
 }]);
 
 Route::resource('users', 'UsersController');
+Route::resource('contests', 'ContestsController');
+Route::resource('contests.entries', 'EntriesController');
 
 
 // Activate account with this email link
@@ -34,8 +36,6 @@ Route::get('/registration/verify/{confirmation}', ['as' => 'users.activate', fun
 	return Redirect::route('home');
 
 }]);
-
-Route::resource('contests', 'ContestsController');
 
 // User authentication - Login
 Route::get('login', ['as' => 'users.login', 'uses' => 'UsersController@login']);

@@ -2,6 +2,7 @@
 $darken-percentage: 5%;
 
 .btn {
+	display: inline-block;
 	background: white;
 	outline: none;
 	border: 1px solid #ccc;
@@ -20,14 +21,15 @@ $darken-percentage: 5%;
 	}
 }
 .btn-succes {
-	background: #A1E12F;
-	color: #FFF;
-	border-color: #87AA7E;
-	text-transform: uppercase;
-	font-weight: bold;
+	@extend .btn-primary;
+}
+.btn-danger {
+	@extend .btn-primary;
+	background: red;
 	&:hover {
-		background: darken(#A1E12F, $darken-percentage);
+		background: darken(red, $darken-percentage);
 	}
+
 }
 
 // Alerts

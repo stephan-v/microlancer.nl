@@ -4,7 +4,7 @@
 	<div class="row full-width-image">
 		<div class="container">
 			<div class="intro">
-				<h2 class="tagline">De online marktplaats voor grafisch ontwerp.</h2>
+				<h2 class="tagline">De online marktplaats voor grafisch ontwerp .</h2>
 				<h3 class="subline">Microlancer geeft toegang tot een team van honderden ontwerpers, die jou helpen te profiteren van de beste ontwerptalenten, tegen een lage kostprijs.</h3>
 			</div><!-- end .intro -->
 		</div><!-- end .container-->
