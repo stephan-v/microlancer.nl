@@ -15,11 +15,11 @@ class CreateEntriesTable extends Migration {
 		Schema::create('entries', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('user_id');
-			$table->integer('contest_id');
 			$table->string('filename');
 			$table->integer('rating');
 			$table->boolean('winning_design');
+			$table->integer('entryable_id');
+			$table->integer('entryable_type');
 			$table->timestamps();
 		});
 	}
