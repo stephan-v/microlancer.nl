@@ -18,6 +18,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		$this->attributes['password'] = Hash::make($value);
 	}
 
+    public function entries() 
+    {
+        return $this->morphMany('Entry', 'entryable');
+    }
+
 	// Relationship
 	// hasMany method argument MOET met capital
 	public function contests()

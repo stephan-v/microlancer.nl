@@ -9,4 +9,9 @@ class Contest extends Eloquent {
 		return $this->belongsTo('User');
 	}
 
+	public function entries() 
+	{
+		return $this->morphMany('Entry', 'entryable');
+	}
+
 }
