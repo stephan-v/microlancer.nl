@@ -10,8 +10,9 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		$this->call('UsersTableSeeder');
+		$this->call('ContestsTableSeeder');
 
-		$this->command->info('User table seeded!');
+		$this->command->info('Tables have been seeded.');
 	}
 
 }

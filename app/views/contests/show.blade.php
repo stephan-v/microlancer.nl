@@ -9,7 +9,6 @@
 				</section>
 				<section class="contest-details">
 					<h1>{{ $contest->title }}</h1>
-					<p>{{ $contest->description }}</p>
 
 					@if(Auth::check() and Auth::user()->id == $contest->user_id)
 
@@ -29,7 +28,7 @@
 		<div class="row">
 			<div class="column-12">
 				<section class="contest-briefing">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, minus, voluptas similique voluptatem quis voluptates autem ipsam odit perspiciatis animi itaque quo ad perferendis consectetur soluta vero voluptatibus dignissimos impedit!</p>
+					<p>{{ $contest->description }}</p>
 				</section>
 			</div><!-- end .column-12 -->
 		</div><!-- end .row -->
